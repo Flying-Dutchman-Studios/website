@@ -8,41 +8,64 @@
 <meta property="og:title" content="Flying Dutchman Studios">
 <meta property="og:description" content="Small apps that give children a real phone call from someone magical.">
 <meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@600;700;800;900&family=Baloo+2:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  body { margin: 0; background: #14261E; color: #EDE4D3; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.6; }
-  main { max-width: 620px; margin: 0 auto; padding: 72px 24px 90px; }
-  h1 { font-size: 34px; line-height: 1.1; margin: 22px 0 10px; letter-spacing: -0.01em; }
-  .lead { font-size: 19px; margin: 0 0 44px; color: #C9D8CD; }
-  h2 { font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: #9AB0A2; margin: 0 0 16px; font-weight: 700; }
-  .apps { display: flex; flex-direction: column; gap: 14px; margin: 0 0 44px; }
-  .app { display: flex; align-items: center; gap: 16px; background: #1C3529; border: 1px solid #2C4C3B; border-radius: 18px; padding: 18px 20px; text-decoration: none; color: inherit; }
-  .app:hover { background: #22402F; }
-  .app svg { flex: none; }
-  .app strong { display: block; font-size: 18px; margin-bottom: 2px; }
-  .app span { font-size: 15px; color: #C9D8CD; }
+  body { margin: 0; background: #14261E; color: #EDE4D3; font-family: 'Baloo 2', ui-rounded, system-ui, sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  main { max-width: 560px; margin: 0 auto; padding: 64px 24px 90px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+  .logo { width: 200px; height: auto; display: block; margin: 0 auto 22px; }
+  /* Het logo bevat het woordmerk al. De h1 blijft in de pagina staan voor
+     zoekmachines en schermlezers, maar wordt niet getoond. */
+  h1 { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+  .lead { font-size: 19px; margin: 0 0 46px; color: #C9D8CD; max-width: 420px; }
+  h2 { font-family: 'Grandstander', system-ui, sans-serif; font-weight: 900; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #9AB0A2; margin: 0 0 16px; }
+  .apps { display: flex; flex-direction: column; align-items: center; gap: 20px; margin: 0 0 46px; width: 100%; }
+  .app { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%; box-sizing: border-box; border-radius: 24px; padding: 26px 22px 28px; text-decoration: none; color: inherit; transition: transform 0.12s ease; }
+  /* Eigen kleur per app, met een crème rand en diepte eronder, zoals de
+     knoppen in de apps zelf. */
+  .app.sint { background: #E8483A; box-shadow: 0 0 0 2px #FFFDF7, 0 6px 0 #F0B429; }
+  .app.santa { background: #1C5943; box-shadow: 0 0 0 2px #FFFDF7, 0 6px 0 #F0B429; }
+  .app:hover { transform: translateY(-2px); }
+  .app.sint:active { transform: translateY(4px); box-shadow: 0 0 0 2px #FFFDF7, 0 2px 0 #F0B429; }
+  .app.santa:active { transform: translateY(4px); box-shadow: 0 0 0 2px #FFFDF7, 0 2px 0 #F0B429; }
+  .app strong { font-family: 'Grandstander', system-ui, sans-serif; font-weight: 900; font-size: 19px; color: #FFFDF7; }
+  .app span { font-size: 15px; color: #F6EAD3; }
+  .over { max-width: 460px; }
   .over p { margin: 0 0 16px; }
-  footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #2C4C3B; font-size: 14px; color: #9AB0A2; }
+  footer { margin-top: 44px; padding-top: 24px; border-top: 1px solid #2C4C3B; font-size: 14px; color: #9AB0A2; width: 100%; }
   a { color: #F0B429; }
 </style>
 </head>
 <body>
 <main>
+  <img class="logo" src="logo-licht.png" alt="Flying Dutchman Studios">
+
   <h1>Flying Dutchman Studios</h1>
   <p class="lead">We make small apps that give a child a real phone call from someone magical.</p>
 
   <h2>Our apps</h2>
   <div class="apps">
-    <a class="app" href="sint/">
-      <svg width="40" height="40" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M7 13 V7.4 L12 1.8 L17 7.4 V13 Z" fill="#C9563F" />
-        <rect x="5.5" y="13" width="13" height="3" rx="1.2" fill="#F0B429" />
-        <rect x="11.2" y="4.6" width="1.6" height="6" fill="#F0B429" />
-        <rect x="9.4" y="6.4" width="5.2" height="1.6" fill="#F0B429" />
+    <a class="app sint" href="sint/">
+      <svg width="76" height="76" viewBox="0 0 140 140" role="img" aria-label="Sinterklaas">
+        <circle cx="70" cy="74" r="50" fill="#F0B429" />
+        <ellipse cx="70" cy="122" rx="44" ry="13" fill="#FFFFFF" />
+        <circle cx="70" cy="90" r="25" fill="#F7D3AC" />
+        <path d="M48 88 C40 106 46 122 70 132 C94 122 100 106 92 88 C86 102 78 108 70 108 C62 108 54 102 48 88 Z" fill="#FFFFFF" />
+        <circle cx="58" cy="121" r="10" fill="#FFFFFF" />
+        <circle cx="70" cy="125" r="11" fill="#FFFFFF" />
+        <circle cx="82" cy="121" r="10" fill="#FFFFFF" />
+        <circle cx="61" cy="90" r="3.6" fill="#3A2418" />
+        <circle cx="79" cy="90" r="3.6" fill="#3A2418" />
+        <circle cx="70" cy="101" r="5.8" fill="#E9BC8D" />
+        <path d="M45 78 L45 52 L70 24 L95 52 L95 78 C86 72 78 69 70 69 C62 69 54 72 45 78 Z" fill="#D6342A" stroke="#FFF8EC" stroke-width="2.5" stroke-linejoin="round" />
+        <path d="M70 42 V60 M62 51 H78" stroke="#F0B429" stroke-width="4" stroke-linecap="round" fill="none" />
       </svg>
-      <span><strong>Sinterklaas Pakjeslijn</strong><span>A personal phone call from Sinterklaas, in Dutch</span></span>
+      <strong>Sinterklaas Pakjeslijn</strong>
+      <span>A personal phone call from Sinterklaas, in Dutch</span>
     </a>
-    <a class="app" href="santa/">
-      <svg width="40" height="40" viewBox="0 0 140 140" aria-hidden="true">
+    <a class="app santa" href="santa/">
+      <svg width="76" height="76" viewBox="0 0 140 140" role="img" aria-label="Santa">
         <circle cx="70" cy="72" r="50" fill="#F2E3C9" />
         <circle cx="70" cy="78" r="28" fill="#F7D3AC" />
         <path d="M46 74 C38 94 44 114 70 128 C96 114 102 94 94 74 C88 90 80 98 70 98 C60 98 52 90 46 74 Z" fill="#FFFFFF" />
@@ -55,7 +78,8 @@
         <rect x="40" y="52" width="62" height="14" rx="7" fill="#FFFFFF" />
         <circle cx="110" cy="46" r="9" fill="#FFFFFF" />
       </svg>
-      <span><strong>Call from Santa: Christmas</strong><span>A personal phone call from Santa, in English</span></span>
+      <strong>Call from Santa: Christmas</strong>
+      <span>A personal phone call from Santa, in English</span>
     </a>
   </div>
 
@@ -66,8 +90,8 @@
   </div>
 
   <footer>
-    Flying Dutchman Studios &middot; Utrecht, the Netherlands<br>
-    <a href="mailto:bmarwork@gmail.com">bmarwork@gmail.com</a>
+    Made with love in the Netherlands<br>
+    <a href="mailto:hello@flyingdutchmanstudios.app">hello@flyingdutchmanstudios.app</a>
   </footer>
 </main>
 </body>
