@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Call from Santa</title>
+<meta name="description" content="Santa calls your child in person. You fill in what he knows, your child gets a real phone call.">
+<meta property="og:title" content="Call from Santa">
+<meta property="og:description" content="Santa calls your child in person, with their name, a compliment and a little task.">
+<meta property="og:type" content="website">
+<style>
+  body { margin: 0; background: #0F3D28; color: #F6EAD3; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.6; }
+  main { max-width: 460px; margin: 0 auto; padding: 56px 24px 80px; text-align: center; }
+  h1 { font-size: 28px; line-height: 1.15; margin: 20px 0 8px; }
+  p { margin: 0 0 20px; font-size: 17px; }
+  .knop { display: block; background: #C0392B; color: #FFFDF7; text-decoration: none; font-weight: 700; font-size: 17px; border-radius: 999px; padding: 16px 22px; border: 2px solid #F0B429; box-shadow: 0 4px 0 #7A1D14; margin: 0 0 12px; }
+  .knop.ios { background: #1C5943; box-shadow: 0 4px 0 #0A2E1D; }
+  .klein { font-size: 14px; color: #C2D6C8; }
+  a.klein { color: #F0B429; }
+</style>
+</head>
+<body>
+<main>
+  <svg width="96" height="96" viewBox="0 0 140 140" role="img" aria-label="Santa" style="display: block; margin: 0 auto;"><circle cx="70" cy="72" r="50" fill="#F2E3C9" /><circle cx="70" cy="78" r="28" fill="#F7D3AC" /><path d="M46 74 C38 94 44 114 70 128 C96 114 102 94 94 74 C88 90 80 98 70 98 C60 98 52 90 46 74 Z" fill="#FFFFFF" /><circle cx="56" cy="115" r="11" fill="#FFFFFF" /><circle cx="84" cy="115" r="11" fill="#FFFFFF" /><circle cx="60" cy="74" r="4" fill="#3A2418" /><circle cx="80" cy="74" r="4" fill="#3A2418" /><circle cx="70" cy="88" r="6.5" fill="#E9BC8D" /><path d="M44 56 C46 32 62 20 78 22 C96 24 106 36 108 46 C100 44 92 46 86 52 C78 50 60 50 44 56 Z" fill="#D6342A" /><rect x="40" y="52" width="62" height="14" rx="7" fill="#FFFFFF" /><circle cx="110" cy="46" r="9" fill="#FFFFFF" /></svg>
+
+  <h1>Santa calls your child in person</h1>
+  <p>You fill in what Santa knows: your child's name, a compliment and a little task. Then you hand over the phone and your child gets a real call.</p>
+
+  <a class="knop" id="android" href="https://play.google.com/store/apps/details?id=com.flyingdutchmanstudios.callfromsanta">Get it on Android</a>
+  <a class="knop ios" id="ios" href="https://apps.apple.com/us/app/call-from-santa-christmas/id0000000000">Get it on iPhone</a>
+
+  <p class="klein">From the workshop of Flying Dutchman Studios</p>
+  <p class="klein"><a class="klein" href="privacy.html">Privacy policy</a> &middot; <a class="klein" href="mailto:bmarwork@gmail.com">bmarwork@gmail.com</a></p>
+</main>
+
+<script>
+  // On a phone, send visitors straight to the right store: someone arriving
+  // from a shared link wants to download, not read. On a computer the page
+  // stays, because the store app cannot open there.
+  (function () {
+    var ua = navigator.userAgent || "";
+    var isIOS = /iPad|iPhone|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+    var isAndroid = /Android/.test(ua);
+    if (location.hash === "#stay") return;
+    var iosLink = document.getElementById("ios").href;
+    // While the app number is still a placeholder: keep the page.
+    if (isIOS && !/id0{6,}/.test(iosLink)) location.replace(iosLink);
+    else if (isAndroid) location.replace(document.getElementById("android").href);
+  })();
+</script>
+</body>
+</html>
