@@ -67,9 +67,10 @@
 
   .panel { background: var(--cream); border-radius: 30px; padding: 30px 30px 34px; box-shadow: 0 18px 40px rgba(0,0,0,0.16); }
   .panel-top { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-bottom: 24px; }
-  .badge { flex: none; width: 60px; height: 60px; border-radius: 18px; display: flex; align-items: center; justify-content: center; }
-  .band.sint .badge { background: #FDEBD2; }
-  .band.santa .badge { background: #E3F0E6; }
+  .badge { flex: none; width: 66px; height: 66px; border-radius: 20px; overflow: hidden; display: block; }
+  .badge img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .band.sint .badge { border: 3px solid var(--gold); box-shadow: 0 4px 0 #8E2A20; }
+  .band.santa .badge { border: 3px solid var(--gold); box-shadow: 0 4px 0 #123D2E; }
   .panel-top div { flex: 1 1 240px; min-width: 0; }
   .panel-top h3 { font-size: 22px; line-height: 1.2; }
   .panel-top p { margin: 3px 0 0; color: var(--muted); font-size: 16px; }
@@ -184,7 +185,7 @@
   <div class="wrap">
     <img class="logo" src="logo-wit.png" alt="Flying Dutchman Studios" width="834" height="450">
     <h1>We build the moments families <em>tell each other about</em></h1>
-    <p class="lede">A small studio from the Netherlands, sailing after one idea: an app should be worth remembering. We make things that make a child go quiet for a second, and a parent reach for the camera.</p>
+    <p class="lede">An independent studio from the Netherlands, building apps for families that children remember years later. Two Christmas apps today, and a growing collection of playful and educational work for young families ahead.</p>
   </div>
 </header>
 
@@ -198,17 +199,7 @@
     </div>
     <div class="panel">
       <div class="panel-top">
-        <span class="badge" aria-hidden="true">
-          <svg width="38" height="38" viewBox="0 0 140 140">
-            <circle cx="70" cy="88" r="25" fill="#F7D3AC" />
-            <path d="M45 84 C40 106 50 124 70 126 C90 124 100 106 95 84 C88 100 80 106 70 106 C60 106 52 100 45 84 Z" fill="#FFFFFF" />
-            <circle cx="61" cy="86" r="3.6" fill="#3A2418" />
-            <circle cx="79" cy="86" r="3.6" fill="#3A2418" />
-            <circle cx="70" cy="97" r="6" fill="#E9BC8D" />
-            <path d="M46 74 V44 L70 16 L94 44 V74 C86 68 78 65 70 65 C62 65 54 68 46 74 Z" fill="#D6342A" />
-            <path d="M70 34 V56 M60 45 H80" stroke="#F0B429" stroke-width="5" stroke-linecap="round" fill="none" />
-          </svg>
-        </span>
+        <span class="badge" aria-hidden="true"><img src="icoon-sint.png" alt="" width="512" height="512"></span>
         <div>
           <h3>Sinterklaas Pakjeslijn</h3>
           <p>He knows the name, the compliment and the little task you filled in.</p>
@@ -242,20 +233,7 @@
     </div>
     <div class="panel">
       <div class="panel-top">
-        <span class="badge" aria-hidden="true">
-          <svg width="38" height="38" viewBox="0 0 140 140">
-            <circle cx="70" cy="78" r="28" fill="#F7D3AC" />
-            <path d="M46 74 C38 94 44 114 70 128 C96 114 102 94 94 74 C88 90 80 98 70 98 C60 98 52 90 46 74 Z" fill="#FFFFFF" />
-            <circle cx="56" cy="115" r="11" fill="#FFFFFF" />
-            <circle cx="84" cy="115" r="11" fill="#FFFFFF" />
-            <circle cx="60" cy="74" r="4" fill="#3A2418" />
-            <circle cx="80" cy="74" r="4" fill="#3A2418" />
-            <circle cx="70" cy="88" r="6.5" fill="#E9BC8D" />
-            <path d="M44 56 C46 32 62 20 78 22 C96 24 106 36 108 46 C100 44 92 46 86 52 C78 50 60 50 44 56 Z" fill="#D6342A" />
-            <rect x="40" y="52" width="62" height="14" rx="7" fill="#FFFFFF" />
-            <circle cx="110" cy="46" r="9" fill="#FFFFFF" />
-          </svg>
-        </span>
+        <span class="badge" aria-hidden="true"><img src="icoon-santa.png" alt="" width="512" height="512"></span>
         <div>
           <h3>Call from Santa: Christmas</h3>
           <p>Same idea, same care, written and recorded in English.</p>
@@ -334,7 +312,8 @@
     <div class="closing-card">
       <div>
         <h2>About the studio</h2>
-        <p>Flying Dutchman Studios is an independent studio in the Netherlands. Everything is made in house: the writing, the artwork and the voices. We keep our apps small and quiet on purpose. A parent fills everything in, nothing is asked of the child, and no personal data is sold or shared.</p>
+        <p>Flying Dutchman Studios is an independent studio in the Netherlands, making apps where a little wonder is the point and the craft is the means. Everything is made in house: the writing, the artwork, the voices and the code, so every word a child hears has been weighed by a person.</p>
+        <p>Our two Christmas apps are the beginning. We are building towards a broader collection for young families: playful, imaginative and educational work, held to the same standard. A parent stays in control, nothing is asked of the child, and no personal data is ever sold or shared.</p>
       </div>
       <div class="reach">
         <span class="reach-label">Get in touch</span>
