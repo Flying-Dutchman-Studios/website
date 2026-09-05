@@ -41,9 +41,11 @@
   .knop:active { transform: translateY(3px); }
   .knop.android:active { box-shadow: 0 2px 0 #7A1D14; }
   .knop.ios:active { box-shadow: 0 2px 0 #0A2E1D; }
+  .goud { color: var(--gold); }
   .punten { list-style: none; margin: 20px 0 0; padding: 16px 0 0; border-top: 1px solid #2A6B50; display: flex; flex-direction: column; gap: 9px; text-align: left; }
   .punten li { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; color: #D7E7DC; }
   .vink { flex: none; margin-top: 3px; color: var(--gold); }
+  .voetlogo { width: 168px; height: auto; margin: 0 auto 2px; display: block; opacity: 0.95; }
   .voet { margin: 22px 0 0; text-align: center; display: flex; flex-direction: column; gap: 7px; font-size: 14px; color: #A8C6B4; }
   .voet a { color: var(--gold); }
   .voet a:hover { color: #FFD05C; }
@@ -54,20 +56,23 @@
   <div class="kaart">
     <img class="beeld" src="../deelbeeld-santa.png" alt="Call from Santa" width="1200" height="630">
     <div class="binnen">
-      <h1>Santa calls your child in person</h1>
-      <p class="lead">You fill in what Santa knows: your child's name, a compliment and a little task. Then you hand over the phone and your child gets a real call.</p>
+      <h1>The magic of Santa<br><span class="goud">on your own phone</span></h1>
+      <p class="lead">You decide what Santa knows: a name, a compliment, a little task and a question your child gets to answer. You listen to all of it first, then you hand over the phone.</p>
       <div class="knoppen">
         <a class="knop android" id="android" href="https://play.google.com/store/apps/details?id=com.flyingdutchmanstudios.callfromsanta"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5h12v6.2a1.8 1.8 0 0 1-1.8 1.8H7.8A1.8 1.8 0 0 1 6 16.7Z" fill="currentColor"/><path d="M6 9.6a6 6 0 0 1 12 0Z" fill="currentColor"/><rect x="2.6" y="10.4" width="2.4" height="6.4" rx="1.2" fill="currentColor"/><rect x="19" y="10.4" width="2.4" height="6.4" rx="1.2" fill="currentColor"/><rect x="8.2" y="17.6" width="2.3" height="4.6" rx="1.15" fill="currentColor"/><rect x="13.5" y="17.6" width="2.3" height="4.6" rx="1.15" fill="currentColor"/><path d="M7.6 2.4 8.9 4.3M16.4 2.4 15.1 4.3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><circle cx="9.6" cy="7.1" r="0.9" fill="#FBF4E7"/><circle cx="14.4" cy="7.1" r="0.9" fill="#FBF4E7"/></svg><span>Get it on Android</span></a>
         <a class="knop ios" id="ios" href="https://apps.apple.com/us/app/call-from-santa-christmas/id0000000000"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.5c0-2.2 1.7-3.2 1.8-3.3-1-1.5-2.5-1.7-3-1.7-1.3-.1-2.5.8-3.2.8-.6 0-1.7-.7-2.8-.7-1.5 0-2.9.9-3.6 2.2-1.5 2.7-.4 6.6 1.1 8.8.7 1 1.6 2.2 2.7 2.2 1.1 0 1.4-.7 2.7-.7 1.2 0 1.5.7 2.6.7 1.1 0 1.9-1.1 2.6-2.1.5-.8.8-1.5 1-2-.1 0-2-.8-1.9-3.2Z" fill="currentColor"/><path d="M14.3 5.9c.6-.7 1-1.6.9-2.6-.9.1-1.9.6-2.5 1.3-.5.6-1 1.6-.8 2.5 1 .1 1.9-.5 2.4-1.2Z" fill="currentColor"/></svg><span>Get it on iPhone</span></a>
       </div>
       <ul class="punten">
-        <li><svg class="vink" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17.5 19 7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A real Santa voice, never robotic</span></li>
-        <li><svg class="vink" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17.5 19 7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>You write every word yourself</span></li>
-        <li><svg class="vink" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17.5 19 7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Free to use, no subscription</span></li>
+        <li><svg class="vink" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17.5 19 7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>You stay in control: you pick every word and listen before your child does</span></li>
+        <li><svg class="vink" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17.5 19 7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A warm, lifelike voice that says your child’s own name out loud</span></li>
+        <li><svg class="vink" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17.5 19 7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Four moments in the season, from the workshop to Christmas Eve</span></li>
+        <li><svg class="vink" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17.5 19 7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Plenty of choices, so no two messages come out the same</span></li>
+        <li><svg class="vink" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17.5 19 7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Free to use under a fair use policy, no subscription and no forced ads</span></li>
       </ul>
     </div>
   </div>
   <div class="voet">
+    <img class="voetlogo" src="../logo-wit.png" alt="Flying Dutchman Studios" width="360" height="90">
     <span>From the workshop of Flying Dutchman Studios</span>
     <span><a href="privacy.html">Privacy policy</a> &middot; <a href="mailto:hello@flyingdutchmanstudios.app">hello@flyingdutchmanstudios.app</a></span>
   </div>
