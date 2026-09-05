@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sinterklaas Pakjeslijn</title>
+<meta name="description" content="Sinterklaas belt je kind persoonlijk op. U vult in wat hij weet, uw kind krijgt een echt telefoontje.">
+<meta property="og:title" content="Sinterklaas Pakjeslijn">
+<meta property="og:description" content="Een echt telefoontje van Sinterklaas, gepersonaliseert door u voor uw kindje(s)!">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://flyingdutchmanstudios.app/sinterklaaspakjeslijn/">
+<meta property="og:image" content="https://flyingdutchmanstudios.app/deelbeeld-sint.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sinterklaas Pakjeslijn">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://flyingdutchmanstudios.app/deelbeeld-sint.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@700;800;900&family=Baloo+2:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --ink: #FBF4E7; --gold: #F0B429; --zacht: #F6D9CE; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #8E2A20; color: var(--ink); font-family: 'Baloo 2', system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.55; }
+  /* Zachte gloed achter de kaart, zodat de vlakke kleur niet dood aanvoelt. */
+  body::before { content: ""; position: fixed; inset: 0; background: radial-gradient(60% 42% at 50% 12%, rgba(201,86,63,0.5), transparent 70%); pointer-events: none; }
+  main { position: relative; max-width: 520px; margin: 0 auto; padding: 30px 20px 54px; }
+  .kaart { background: #A33427; border: 2px solid #C0563F; border-radius: 28px; box-shadow: 0 10px 0 #5E1A13, 0 24px 50px rgba(0,0,0,0.28); overflow: hidden; }
+  .beeld { display: block; width: 100%; height: auto; aspect-ratio: 1200 / 630; border-bottom: 2px solid #C0563F; }
+  .binnen { padding: 22px 22px 24px; text-align: center; }
+  h1 { margin: 0 0 8px; font-family: 'Grandstander', system-ui, sans-serif; font-weight: 900; font-size: 27px; line-height: 1.15; text-wrap: pretty; }
+  .lead { margin: 0 0 20px; font-size: 16.5px; color: #FBE4DA; text-wrap: pretty; }
+  .knoppen { display: flex; flex-direction: column; gap: 11px; }
+  .knop { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding: 14px 20px; border-radius: 999px; text-decoration: none; font-family: 'Grandstander', system-ui, sans-serif; font-weight: 800; font-size: 16px; white-space: nowrap; border: 2px solid var(--gold); transition: transform .12s ease, box-shadow .12s ease; }
+  .knop svg { flex: none; }
+  .knop.android { background: #1C5943; color: #FFFDF7; box-shadow: 0 5px 0 #0A2E1D; }
+  .knop.ios { background: #C9563F; color: #FFFDF7; box-shadow: 0 5px 0 #7A1D14; }
+  .knop:hover { transform: translateY(-2px); }
+  .knop.android:hover { box-shadow: 0 7px 0 #0A2E1D; }
+  .knop.ios:hover { box-shadow: 0 7px 0 #7A1D14; }
+  .knop:active { transform: translateY(3px); }
+  .knop.android:active { box-shadow: 0 2px 0 #0A2E1D; }
+  .knop.ios:active { box-shadow: 0 2px 0 #7A1D14; }
+  .punten { list-style: none; margin: 20px 0 0; padding: 16px 0 0; border-top: 1px solid #C0563F; display: flex; flex-direction: column; gap: 9px; text-align: left; }
+  .punten li { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; color: #FBE4DA; }
+  .vink { flex: none; margin-top: 3px; color: var(--gold); }
+  .voet { margin: 22px 0 0; text-align: center; display: flex; flex-direction: column; gap: 7px; font-size: 14px; color: #F0C4B7; }
+  .voet a { color: var(--gold); }
+  .voet a:hover { color: #FFD05C; }
+</style>
+</head>
+<body>
+<main>
+  <div class="kaart">
+    <img class="beeld" src="../deelbeeld-sint.png" alt="Sinterklaas Pakjeslijn" width="1200" height="630">
+    <div class="binnen">
+      <h1>Sinterklaas belt uw kind persoonlijk op</h1>
+      <p class="lead">U vult in wat Sinterklaas weet: de naam van uw kind, een compliment en een taakje. Daarna geeft u de telefoon door en krijgt uw kind een echt telefoontje.</p>
+      <div class="knoppen">
+        <a class="knop android" id="android" href="https://play.google.com/store/apps/details?id=com.sinterklaaspakjeslijn.app"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5h12v6.2a1.8 1.8 0 0 1-1.8 1.8H7.8A1.8 1.8 0 0 1 6 16.7Z" fill="currentColor"/><path d="M6 9.6a6 6 0 0 1 12 0Z" fill="currentColor"/><rect x="2.6" y="10.4" width="2.4" height="6.4" rx="1.2" fill="currentColor"/><rect x="19" y="10.4" width="2.4" height="6.4" rx="1.2" fill="currentColor"/><rect x="8.2" y="17.6" width="2.3" height="4.6" rx="1.15" fill="currentColor"/><rect x="13.5" y="17.6" width="2.3" height="4.6" rx="1.15" fill="currentColor"/><path d="M7.6 2.4 8.9 4.3M16.4 2.4 15.1 4.3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><circle cx="9.6" cy="7.1" r="0.9" fill="#FBF4E7"/><circle cx="14.4" cy="7.1" r="0.9" fill="#FBF4E7"/></svg><span>Download voor Android</span></a>
+        <a class="knop ios" id="ios" href="https://apps.apple.com/nl/app/sinterklaas-pakjeslijn/id0000000000"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.5c0-2.2 1.7-3.2 1.8-3.3-1-1.5-2.5-1.7-3-1.7-1.3-.1-2.5.8-3.2.8-.6 0-1.7-.7-2.8-.7-1.5 0-2.9.9-3.6 2.2-1.5 2.7-.4 6.6 1.1 8.8.7 1 1.6 2.2 2.7 2.2 1.1 0 1.4-.7 2.7-.7 1.2 0 1.5.7 2.6.7 1.1 0 1.9-1.1 2.6-2.1.5-.8.8-1.5 1-2-.1 0-2-.8-1.9-3.2Z" fill="currentColor"/><path d="M14.3 5.9c.6-.7 1-1.6.9-2.6-.9.1-1.9.6-2.5 1.3-.5.6-1 1.6-.8 2.5 1 .1 1.9-.5 2.4-1.2Z" fill="currentColor"/></svg><span>Download voor iPhone</span></a>
+      </div>
+      <ul class="punten">
+        <li><svg class="vink" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17.5 19 7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Een echte Sint-stem, geen robot</span></li>
+        <li><svg class="vink" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17.5 19 7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>U schrijft zelf elk woord</span></li>
+        <li><svg class="vink" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17.5 19 7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Gratis te gebruiken, geen abonnement</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="voet">
+    <span>Uit het pakhuis van Flying Dutchman Studios</span>
+    <span><a href="privacybeleid.html">Privacybeleid</a> &middot; <a href="mailto:hello@flyingdutchmanstudios.app">hello@flyingdutchmanstudios.app</a></span>
+  </div>
+</main>
+
+<script>
+  // Op een telefoon meteen doorsturen naar de juiste winkel: wie via een
+  // gedeelde link binnenkomt wil downloaden, niet lezen. Op een computer blijft
+  // de pagina staan, want daar kan de winkel-app niet opengaan.
+  (function () {
+    var ua = navigator.userAgent || "";
+    var isIOS = /iPad|iPhone|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+    var isAndroid = /Android/.test(ua);
+    if (location.hash === "#stay") return;
+    var iosLink = document.getElementById("ios").href;
+    // Zolang het app-nummer nog een plaatshouder is: pagina laten staan.
+    if (isIOS && !/id0{6,}/.test(iosLink)) location.replace(iosLink);
+    else if (isAndroid) location.replace(document.getElementById("android").href);
+  })();
+</script>
+</body>
+</html>

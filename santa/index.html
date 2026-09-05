@@ -8,42 +8,82 @@
 <meta property="og:title" content="Call from Santa">
 <meta property="og:description" content="Santa calls your child in person, with their name, a compliment and a little task.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://flyingdutchmanstudios.app/santa/">
+<meta property="og:image" content="https://flyingdutchmanstudios.app/deelbeeld-santa.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Call from Santa">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://flyingdutchmanstudios.app/deelbeeld-santa.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@700;800;900&family=Baloo+2:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  body { margin: 0; background: #0F3D28; color: #F6EAD3; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.6; }
-  main { max-width: 460px; margin: 0 auto; padding: 56px 24px 80px; text-align: center; }
-  h1 { font-size: 28px; line-height: 1.15; margin: 20px 0 8px; }
-  p { margin: 0 0 20px; font-size: 17px; }
-  .knop { display: block; background: #C0392B; color: #FFFDF7; text-decoration: none; font-weight: 700; font-size: 17px; border-radius: 999px; padding: 16px 22px; border: 2px solid #F0B429; box-shadow: 0 4px 0 #7A1D14; margin: 0 0 12px; }
-  .knop.ios { background: #1C5943; box-shadow: 0 4px 0 #0A2E1D; }
-  .klein { font-size: 14px; color: #C2D6C8; }
-  a.klein { color: #F0B429; }
+  :root { --ink: #FBF4E7; --gold: #F0B429; --zacht: #C2D6C8; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #0F3D28; color: var(--ink); font-family: 'Baloo 2', system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.55; }
+  /* Zachte gloed achter de kaart, zodat de vlakke kleur niet dood aanvoelt. */
+  body::before { content: ""; position: fixed; inset: 0; background: radial-gradient(60% 42% at 50% 12%, rgba(47,143,91,0.45), transparent 70%); pointer-events: none; }
+  main { position: relative; max-width: 520px; margin: 0 auto; padding: 30px 20px 54px; }
+  .kaart { background: #14513A; border: 2px solid #2A6B50; border-radius: 28px; box-shadow: 0 10px 0 #0A2A1C, 0 24px 50px rgba(0,0,0,0.28); overflow: hidden; }
+  .beeld { display: block; width: 100%; height: auto; aspect-ratio: 1200 / 630; border-bottom: 2px solid #2A6B50; }
+  .binnen { padding: 22px 22px 24px; text-align: center; }
+  h1 { margin: 0 0 8px; font-family: 'Grandstander', system-ui, sans-serif; font-weight: 900; font-size: 27px; line-height: 1.15; text-wrap: pretty; }
+  .lead { margin: 0 0 20px; font-size: 16.5px; color: #D7E7DC; text-wrap: pretty; }
+  .knoppen { display: flex; flex-direction: column; gap: 11px; }
+  .knop { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding: 14px 20px; border-radius: 999px; text-decoration: none; font-family: 'Grandstander', system-ui, sans-serif; font-weight: 800; font-size: 16px; white-space: nowrap; border: 2px solid var(--gold); transition: transform .12s ease, box-shadow .12s ease; }
+  .knop svg { flex: none; }
+  .knop.android { background: #C0392B; color: #FFFDF7; box-shadow: 0 5px 0 #7A1D14; }
+  .knop.ios { background: #1C5943; color: #FFFDF7; box-shadow: 0 5px 0 #0A2E1D; }
+  .knop:hover { transform: translateY(-2px); }
+  .knop.android:hover { box-shadow: 0 7px 0 #7A1D14; }
+  .knop.ios:hover { box-shadow: 0 7px 0 #0A2E1D; }
+  .knop:active { transform: translateY(3px); }
+  .knop.android:active { box-shadow: 0 2px 0 #7A1D14; }
+  .knop.ios:active { box-shadow: 0 2px 0 #0A2E1D; }
+  .punten { list-style: none; margin: 20px 0 0; padding: 16px 0 0; border-top: 1px solid #2A6B50; display: flex; flex-direction: column; gap: 9px; text-align: left; }
+  .punten li { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; color: #D7E7DC; }
+  .vink { flex: none; margin-top: 3px; color: var(--gold); }
+  .voet { margin: 22px 0 0; text-align: center; display: flex; flex-direction: column; gap: 7px; font-size: 14px; color: #A8C6B4; }
+  .voet a { color: var(--gold); }
+  .voet a:hover { color: #FFD05C; }
 </style>
 </head>
 <body>
 <main>
-  <svg width="96" height="96" viewBox="0 0 140 140" role="img" aria-label="Santa" style="display: block; margin: 0 auto;"><circle cx="70" cy="72" r="50" fill="#F2E3C9" /><circle cx="70" cy="78" r="28" fill="#F7D3AC" /><path d="M46 74 C38 94 44 114 70 128 C96 114 102 94 94 74 C88 90 80 98 70 98 C60 98 52 90 46 74 Z" fill="#FFFFFF" /><circle cx="56" cy="115" r="11" fill="#FFFFFF" /><circle cx="84" cy="115" r="11" fill="#FFFFFF" /><circle cx="60" cy="74" r="4" fill="#3A2418" /><circle cx="80" cy="74" r="4" fill="#3A2418" /><circle cx="70" cy="88" r="6.5" fill="#E9BC8D" /><path d="M44 56 C46 32 62 20 78 22 C96 24 106 36 108 46 C100 44 92 46 86 52 C78 50 60 50 44 56 Z" fill="#D6342A" /><rect x="40" y="52" width="62" height="14" rx="7" fill="#FFFFFF" /><circle cx="110" cy="46" r="9" fill="#FFFFFF" /></svg>
-
-  <h1>Santa calls your child in person</h1>
-  <p>You fill in what Santa knows: your child's name, a compliment and a little task. Then you hand over the phone and your child gets a real call.</p>
-
-  <a class="knop" id="android" href="https://play.google.com/store/apps/details?id=com.flyingdutchmanstudios.callfromsanta">Get it on Android</a>
-  <a class="knop ios" id="ios" href="https://apps.apple.com/us/app/call-from-santa-christmas/id0000000000">Get it on iPhone</a>
-
-  <p class="klein">From the workshop of Flying Dutchman Studios</p>
-  <p class="klein"><a class="klein" href="privacy.html">Privacy policy</a> &middot; <a class="klein" href="mailto:hello@flyingdutchmanstudios.app">hello@flyingdutchmanstudios.app</a></p>
+  <div class="kaart">
+    <img class="beeld" src="../deelbeeld-santa.png" alt="Call from Santa" width="1200" height="630">
+    <div class="binnen">
+      <h1>Santa calls your child in person</h1>
+      <p class="lead">You fill in what Santa knows: your child's name, a compliment and a little task. Then you hand over the phone and your child gets a real call.</p>
+      <div class="knoppen">
+        <a class="knop android" id="android" href="https://play.google.com/store/apps/details?id=com.flyingdutchmanstudios.callfromsanta"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5h12v6.2a1.8 1.8 0 0 1-1.8 1.8H7.8A1.8 1.8 0 0 1 6 16.7Z" fill="currentColor"/><path d="M6 9.6a6 6 0 0 1 12 0Z" fill="currentColor"/><rect x="2.6" y="10.4" width="2.4" height="6.4" rx="1.2" fill="currentColor"/><rect x="19" y="10.4" width="2.4" height="6.4" rx="1.2" fill="currentColor"/><rect x="8.2" y="17.6" width="2.3" height="4.6" rx="1.15" fill="currentColor"/><rect x="13.5" y="17.6" width="2.3" height="4.6" rx="1.15" fill="currentColor"/><path d="M7.6 2.4 8.9 4.3M16.4 2.4 15.1 4.3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><circle cx="9.6" cy="7.1" r="0.9" fill="#FBF4E7"/><circle cx="14.4" cy="7.1" r="0.9" fill="#FBF4E7"/></svg><span>Get it on Android</span></a>
+        <a class="knop ios" id="ios" href="https://apps.apple.com/us/app/call-from-santa-christmas/id0000000000"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.5c0-2.2 1.7-3.2 1.8-3.3-1-1.5-2.5-1.7-3-1.7-1.3-.1-2.5.8-3.2.8-.6 0-1.7-.7-2.8-.7-1.5 0-2.9.9-3.6 2.2-1.5 2.7-.4 6.6 1.1 8.8.7 1 1.6 2.2 2.7 2.2 1.1 0 1.4-.7 2.7-.7 1.2 0 1.5.7 2.6.7 1.1 0 1.9-1.1 2.6-2.1.5-.8.8-1.5 1-2-.1 0-2-.8-1.9-3.2Z" fill="currentColor"/><path d="M14.3 5.9c.6-.7 1-1.6.9-2.6-.9.1-1.9.6-2.5 1.3-.5.6-1 1.6-.8 2.5 1 .1 1.9-.5 2.4-1.2Z" fill="currentColor"/></svg><span>Get it on iPhone</span></a>
+      </div>
+      <ul class="punten">
+        <li><svg class="vink" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17.5 19 7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A real Santa voice, never robotic</span></li>
+        <li><svg class="vink" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17.5 19 7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>You write every word yourself</span></li>
+        <li><svg class="vink" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17.5 19 7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Free to use, no subscription</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="voet">
+    <span>From the workshop of Flying Dutchman Studios</span>
+    <span><a href="privacy.html">Privacy policy</a> &middot; <a href="mailto:hello@flyingdutchmanstudios.app">hello@flyingdutchmanstudios.app</a></span>
+  </div>
 </main>
 
 <script>
-  // On a phone, send visitors straight to the right store: someone arriving
-  // from a shared link wants to download, not read. On a computer the page
-  // stays, because the store app cannot open there.
+  // Op een telefoon meteen doorsturen naar de juiste winkel: wie via een
+  // gedeelde link binnenkomt wil downloaden, niet lezen. Op een computer blijft
+  // de pagina staan, want daar kan de winkel-app niet opengaan.
   (function () {
     var ua = navigator.userAgent || "";
     var isIOS = /iPad|iPhone|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
     var isAndroid = /Android/.test(ua);
     if (location.hash === "#stay") return;
     var iosLink = document.getElementById("ios").href;
-    // While the app number is still a placeholder: keep the page.
+    // Zolang het app-nummer nog een plaatshouder is: pagina laten staan.
     if (isIOS && !/id0{6,}/.test(iosLink)) location.replace(iosLink);
     else if (isAndroid) location.replace(document.getElementById("android").href);
   })();
