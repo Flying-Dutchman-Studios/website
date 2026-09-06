@@ -78,19 +78,20 @@
   </div>
 </main>
 
+
 <script>
-  // Op een telefoon meteen doorsturen naar de juiste winkel: wie via een
-  // gedeelde link binnenkomt wil downloaden, niet lezen. Op een computer blijft
-  // de pagina staan, want daar kan de winkel-app niet opengaan.
   (function () {
     var ua = navigator.userAgent || "";
     var isIOS = /iPad|iPhone|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
     var isAndroid = /Android/.test(ua);
-    if (location.hash === "#stay") return;
-    var iosLink = document.getElementById("ios").href;
-    // Zolang het app-nummer nog een plaatshouder is: pagina laten staan.
-    if (isIOS && !/id0{6,}/.test(iosLink)) location.replace(iosLink);
-    else if (isAndroid) location.replace(document.getElementById("android").href);
+    if (!isIOS && !isAndroid) return;
+    var rij = document.querySelector(".knoppen");
+    var eigen = document.getElementById(isIOS ? "ios" : "android");
+    var ander = document.getElementById(isIOS ? "android" : "ios");
+    if (!rij || !eigen || !ander) return;
+    rij.insertBefore(eigen, ander);
+    ander.style.opacity = "0.62";
+    ander.style.transform = "scale(0.94)";
   })();
 </script>
 </body>
