@@ -1,0 +1,303 @@
+/* Flying Dutchman Studios — blog
+   Zelfde bouwstenen als de productpagina's: vlakke diepe kleur, zachte
+   radiale gloed erboven, kaart in een lichtere tint van dezelfde kleur,
+   gouden accenten, Grandstander voor koppen en Baloo 2 voor tekst.
+
+   Kleur per pagina met een class op <body>:
+     thema-sint   -> sinterklaasrood
+     thema-santa  -> kerstgroen
+   De blogindex gebruikt het lichte papier van de startpagina.
+*/
+
+:root {
+  --ink: #FBF4E7;
+  --gold: #F0B429;
+  --goud-licht: #FFD05C;
+  --orange: #F2722C;
+  --paper: #FBF8F3;
+  --donker: #1A1512;
+  --muted: #6E625A;
+  --line: #E6DED2;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Baloo 2', ui-rounded, system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: 'Grandstander', system-ui, sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.015em;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+a { color: inherit; }
+
+/* ───────── Donkere artikelpagina's ───────── */
+
+body.thema-sint,
+body.thema-santa {
+  color: var(--ink);
+}
+
+body.thema-sint { background: #8E2A20; }
+body.thema-santa { background: #0F3D28; }
+
+body.thema-sint::before,
+body.thema-santa::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+body.thema-sint::before {
+  background: radial-gradient(60% 42% at 50% 12%, rgba(201,86,63,0.5), transparent 70%);
+}
+
+body.thema-santa::before {
+  background: radial-gradient(60% 42% at 50% 12%, rgba(47,143,91,0.45), transparent 70%);
+}
+
+body.thema-sint { --kaart: #A33427; --rand: #C0563F; --zacht: #F6D9CE; --dieper: #5E1A13; }
+body.thema-santa { --kaart: #14513A; --rand: #2A6B50; --zacht: #D7E7DC; --dieper: #0A2A1C; }
+
+main.band {
+  position: relative;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 24px 20px 54px;
+}
+
+.terug {
+  display: inline-block;
+  margin-bottom: 16px;
+  font-family: 'Grandstander', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--gold);
+  text-decoration: none;
+  opacity: 0.95;
+}
+
+.terug:hover { color: var(--goud-licht); }
+
+.kaart {
+  background: var(--kaart);
+  border: 2px solid var(--rand);
+  border-radius: 28px;
+  box-shadow: 0 10px 0 var(--dieper), 0 24px 50px rgba(0,0,0,0.28);
+  padding: 26px 22px 30px;
+}
+
+.kaart h1 { font-size: clamp(26px, 5.4vw, 34px); line-height: 1.12; margin-bottom: 12px; }
+.kaart h1 .goud { color: var(--gold); }
+
+.lead { font-size: 17px; color: var(--zacht); margin: 0 0 22px; }
+
+.kaart h2 {
+  font-size: 22px;
+  margin: 30px 0 10px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rand);
+}
+
+.kaart h2:first-of-type { border-top: 0; padding-top: 0; }
+
+.kaart h3 { font-size: 17.5px; margin: 22px 0 6px; color: var(--gold); }
+
+.kaart p { margin: 0 0 14px; }
+
+.kaart ul, .kaart ol { margin: 0 0 16px; padding-left: 22px; }
+.kaart li { margin-bottom: 8px; }
+
+.kaart strong { color: var(--gold); font-weight: 700; }
+
+.kaart a { color: var(--gold); text-underline-offset: 3px; }
+.kaart a:hover { color: var(--goud-licht); }
+
+/* Tabel */
+.tabelrol {
+  overflow-x: auto;
+  margin: 0 -6px 22px;
+  padding: 2px 6px 6px;
+  -webkit-overflow-scrolling: touch;
+}
+
+table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 560px; }
+
+th, td {
+  text-align: left;
+  padding: 9px 10px;
+  border-bottom: 1px solid var(--rand);
+  vertical-align: top;
+}
+
+thead th {
+  font-family: 'Grandstander', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  color: var(--zacht);
+  border-bottom: 2px solid var(--rand);
+}
+
+tbody td { color: var(--zacht); }
+tbody td:first-child { color: var(--ink); font-weight: 600; }
+
+th.onsapp, td.onsapp {
+  background: rgba(240,180,41,0.14);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+thead th.onsapp { color: var(--gold); }
+
+/* Knop, zelfde vorm als op de productpagina's */
+.knoppen { display: flex; flex-direction: column; gap: 11px; margin: 24px 0 6px; }
+
+.knop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: 14px 20px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-family: 'Grandstander', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  color: #FFFDF7;
+  border: 2px solid var(--gold);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+body.thema-sint .knop { background: #C9563F; box-shadow: 0 5px 0 #7A1D14; }
+body.thema-santa .knop { background: #1C5943; box-shadow: 0 5px 0 #0A2E1D; }
+.knop:hover { transform: translateY(-2px); }
+.knop:active { transform: translateY(3px); }
+
+/* Video */
+.video {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin: 20px auto;
+  aspect-ratio: 9 / 16;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 2px solid var(--rand);
+  box-shadow: 0 6px 0 var(--dieper), 0 14px 28px rgba(0,0,0,0.25);
+}
+
+.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+.klein {
+  font-size: 13px;
+  color: var(--zacht);
+  opacity: 0.85;
+  border-top: 1px solid var(--rand);
+  padding-top: 16px;
+  margin-top: 28px;
+}
+
+.voet {
+  margin: 22px 0 0;
+  text-align: center;
+  font-size: 14px;
+  color: var(--zacht);
+}
+
+.voet a { color: var(--gold); }
+.voet a:hover { color: var(--goud-licht); }
+
+.voetlogo { width: 168px; height: auto; margin: 26px auto 8px; display: block; opacity: 0.95; }
+
+/* ───────── Blogindex, licht als de startpagina ───────── */
+
+body.blogindex { background: var(--paper); color: var(--donker); }
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 66px 0 74px;
+  color: #FFFDF7;
+  background: radial-gradient(120% 130% at 50% -20%, #17456A 0%, #0E2A3F 52%, #091C2B 100%);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--orange), var(--gold) 50%, var(--orange));
+}
+
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 28px; }
+
+.hero .logo { width: 260px; max-width: 70%; height: auto; display: block; margin: 0 auto 24px; }
+.hero h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.1; margin-bottom: 14px; }
+.hero h1 em { font-style: normal; color: var(--gold); }
+.hero .lede { font-size: clamp(16px, 2vw, 19px); color: #B9CBD8; max-width: 32em; margin: 0 auto; text-wrap: pretty; }
+
+.lijst { padding: 46px 0 60px; }
+
+.artikel {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: #FFFCF6;
+  border: 2px solid var(--line);
+  border-left-width: 10px;
+  border-radius: 20px;
+  box-shadow: 0 10px 24px rgba(26,21,18,0.08);
+  padding: 22px 24px 24px;
+  margin-bottom: 20px;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.artikel:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(26,21,18,0.12); }
+
+.artikel.sint { border-left-color: #C0392B; }
+.artikel.santa { border-left-color: #1C5943; }
+
+.artikel .label {
+  display: inline-block;
+  font-family: 'Grandstander', system-ui, sans-serif;
+  font-weight: 900;
+  font-size: 11px;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  color: #FFFDF7;
+  padding: 4px 11px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+.artikel.sint .label { background: #C0392B; }
+.artikel.santa .label { background: #1C5943; }
+
+.artikel h2 { font-size: 22px; margin-bottom: 8px; }
+.artikel p { margin: 0; color: var(--muted); font-size: 16px; }
+.artikel .datum { margin-top: 12px; font-size: 13.5px; color: var(--muted); }
+
+.indexvoet {
+  border-top: 1px solid var(--line);
+  padding: 26px 0 44px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.indexvoet a { color: #C0392B; }
+
+@media (max-width: 520px) {
+  .kaart { padding: 22px 17px 26px; border-radius: 24px; }
+  main.band { padding: 18px 14px 44px; }
+}
