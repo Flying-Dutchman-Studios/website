@@ -573,3 +573,15 @@ body.blogindex { background: var(--paper); color: var(--donker); }
 .appblok h3 { font-size: 21px; }
 .appblok .knoppen { margin-top: 18px; }
 @media (max-width: 560px) { .shotrij3 img { width: 46%; } }
+
+/* ───────── App-items met eigen icoon ───────── */
+.appitem { display: flex; gap: 16px; align-items: flex-start; margin: 26px 0 22px; padding-top: 22px; border-top: 1px solid var(--rand); }
+.appitem:first-of-type { border-top: 0; padding-top: 0; }
+.appitem .icoon { flex: none; width: 58px; height: 58px; border-radius: 18px; display: grid; place-items: center;
+  background: linear-gradient(#FFD05C, var(--gold) 55%, #D99A14); box-shadow: 0 4px 0 #9C6B0C, 0 8px 16px rgba(0,0,0,0.26); }
+.appitem .icoon svg { width: 30px; height: 30px; }
+.appitem .inhoud { flex: 1 1 auto; min-width: 0; }
+.appitem h3 { margin: 4px 0 8px; color: var(--ink); font-size: 19px; }
+.appitem .meta { font-size: 13.5px; color: var(--zacht); opacity: 0.9; margin: 10px 0 0; }
+.appitem .meta b { color: var(--gold); font-weight: 800; }
+@media (max-width: 520px) { .appitem { gap: 12px; } .appitem .icoon { width: 46px; height: 46px; border-radius: 14px; } .appitem .icoon svg { width: 24px; height: 24px; } }
