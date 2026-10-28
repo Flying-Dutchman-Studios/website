@@ -70,7 +70,7 @@ body.thema-santa { --kaart: #14513A; --rand: #2A6B50; --zacht: #D7E7DC; --dieper
 
 main.band {
   position: relative;
-  max-width: 900px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 24px 20px 54px;
 }
@@ -178,13 +178,21 @@ thead th.onsapp { color: var(--gold); }
 }
 
 /* Hoofdknop: goud, springt eruit op beide achtergronden */
-.knop {
+/* a.knop staat met opzet op twee manieren genoteerd: .kaart a kleurt elke
+   link in de kaart goud, en dat zou de tekst op een gouden knop onleesbaar
+   maken. Deze regel is specifieker en wint. */
+.knop,
+a.knop,
+.kaart a.knop,
+.kaart a.knop:hover,
+.kaart a.knop:visited {
   background: linear-gradient(#FFD05C, var(--gold) 45%, #D99A14);
-  color: #4A2410;
+  color: #3A1C0C;
   border-color: #FFF3D0;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.45);
   box-shadow: 0 6px 0 #9C6B0C, 0 12px 22px rgba(0,0,0,0.3);
   letter-spacing: 0.2px;
+  font-weight: 900;
 }
 .knop:hover { box-shadow: 0 8px 0 #9C6B0C, 0 16px 28px rgba(0,0,0,0.34); }
 .knop:active { box-shadow: 0 2px 0 #9C6B0C, 0 6px 12px rgba(0,0,0,0.3); }
@@ -332,3 +340,127 @@ body.blogindex { background: var(--paper); color: var(--donker); }
 @media (max-width: 520px) {
   .held img { width: 132px; }
 }
+
+
+/* ───────── Genummerde tegels bij lijstartikelen ───────── */
+
+.kaart h2.tegel {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-top: 1px solid var(--rand);
+  padding-top: 24px;
+  margin-top: 34px;
+}
+
+.kaart h2.tegel:first-of-type { border-top: 0; padding-top: 0; margin-top: 8px; }
+
+.kaart h2.tegel .nr {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: linear-gradient(#FFD05C, var(--gold) 55%, #D99A14);
+  color: #4A2410;
+  font-size: 19px;
+  font-weight: 900;
+  box-shadow: 0 4px 0 #9C6B0C, 0 8px 14px rgba(0,0,0,0.26);
+}
+
+/* ───────── Blok voor onze eigen app in een lijst ───────── */
+
+.appblok {
+  background: rgba(240,180,41,0.10);
+  border: 2px solid var(--gold);
+  border-radius: 22px;
+  padding: 20px 20px 22px;
+  margin: 18px 0 26px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.12);
+}
+
+.appblok .vlag {
+  display: inline-block;
+  font-family: 'Grandstander', system-ui, sans-serif;
+  font-weight: 900;
+  font-size: 11.5px;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  color: #4A2410;
+  background: linear-gradient(#FFD05C, var(--gold));
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.appblok h3 { margin: 0 0 10px; font-size: 20px; color: var(--ink); }
+.appblok p:last-of-type { margin-bottom: 0; }
+
+.metshot { display: flex; gap: 22px; align-items: flex-start; }
+.metshot .tekst { flex: 1 1 auto; min-width: 0; }
+
+.shot {
+  flex: none;
+  width: 190px;
+  max-width: 42%;
+  height: auto;
+  border-radius: 18px;
+  filter: drop-shadow(0 12px 24px rgba(0,0,0,0.38));
+}
+
+.shotrij {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 22px 0 6px;
+}
+
+.shotrij img {
+  width: 170px;
+  max-width: 44%;
+  height: auto;
+  border-radius: 16px;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.34));
+}
+
+.bijschrift {
+  text-align: center;
+  font-size: 13px;
+  color: var(--zacht);
+  opacity: 0.85;
+  margin: 8px 0 20px;
+}
+
+@media (max-width: 620px) {
+  .metshot { flex-direction: column; align-items: center; text-align: left; }
+  .shot { width: 200px; max-width: 70%; margin: 4px auto 0; }
+  .kaart h2.tegel .nr { width: 38px; height: 38px; font-size: 17px; }
+}
+
+/* ───────── Rijkere kaarten op de blogindex ───────── */
+
+.artikel { position: relative; overflow: hidden; padding: 0; border-left-width: 2px; }
+
+.artikel .beeld {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1200 / 480;
+  object-fit: cover;
+  object-position: 22% 50%;
+  border-bottom: 2px solid var(--line);
+}
+
+.artikel .binnen { padding: 20px 24px 24px; }
+
+.artikel .streep { height: 6px; }
+.artikel.sint .streep { background: linear-gradient(90deg, #C0392B, #F0B429 55%, #C0392B); }
+.artikel.santa .streep { background: linear-gradient(90deg, #1C5943, #F0B429 55%, #1C5943); }
+
+.artikel .label { margin-top: -2px; }
+
+/* Twee uitsnedes uit hetzelfde deelbeeld, zodat de kaarten verschillen */
+.artikel .beeld.links { object-position: 20% 50%; }
+.artikel .beeld.rechts { object-position: 86% 50%; }
