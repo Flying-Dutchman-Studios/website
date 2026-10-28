@@ -173,6 +173,19 @@
   .plat:hover { transform: translateY(-2px); }
   .band.sint .plat { color: var(--sint); box-shadow: inset 0 0 0 2px var(--sint), 0 4px 0 var(--sint-deep); }
   .band.santa .plat { color: var(--santa); box-shadow: inset 0 0 0 2px var(--santa), 0 4px 0 var(--santa-deep); }
+
+  /* ── Blogband ─────────────────────────────────────────────── */
+  .blogband { padding: 58px 0 64px; background: #FFFCF6; border-top: 1px solid var(--line); }
+  .blogband .binnen { display: flex; align-items: center; gap: 34px; flex-wrap: wrap; justify-content: center; text-align: left; }
+  .blogband .woorden { flex: 1 1 340px; max-width: 540px; }
+  .blogband h2 { font-size: clamp(25px, 3.4vw, 34px); margin-bottom: 12px; }
+  .blogband h2 em { font-style: normal; color: var(--orange); }
+  .blogband p { color: var(--muted); font-size: 17px; margin: 0 0 20px; text-wrap: pretty; }
+  .blogband .btn.blog { background: var(--sea); color: #FFFDF7; box-shadow: 0 4px 0 #091C2B; }
+  .blogband .btn.blog:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #091C2B; }
+  .blogband .beelden { flex: 0 1 420px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .blogband .beelden img { width: 100%; height: auto; border-radius: 14px; box-shadow: 0 10px 22px rgba(26,21,18,0.16); }
+  @media (max-width: 760px) { .blogband .binnen { text-align: center; } .blogband .woorden { max-width: none; } }
 </style>
 </head>
 <body>
@@ -303,6 +316,22 @@
         <p>He asked Sinterklaas a question, got an answer back, and then sat with the phone in his lap for a while. He wanted to hear it again the next morning.</p>
         <cite>Mother of Tim, 6</cite>
       </blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="blogband">
+  <div class="wrap">
+    <div class="binnen">
+      <div class="woorden">
+        <h2>From the <em>workshop</em></h2>
+        <p>Learn more about our apps, about the studio, and about the things we find interesting in the market around us. We compare, we take things apart, and now and then we write down an idea we could not keep to ourselves.</p>
+        <a class="btn blog" href="/blog/">Read the blog</a>
+      </div>
+      <div class="beelden">
+        <img src="/blog/kaart-sint-vergelijk.png" alt="" width="1200" height="500" loading="lazy">
+        <img src="/blog/kaart-santa-ideeen.png" alt="" width="1200" height="500" loading="lazy">
+      </div>
     </div>
   </div>
 </section>
